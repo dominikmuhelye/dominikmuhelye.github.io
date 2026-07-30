@@ -20,17 +20,33 @@ a.button{display:inline-block;background:#0ea5e9;color:#fff;text-decoration:none
 footer{text-align:center;color:#9ca3af;padding:30px 0}
 ul{padding-left:20px}
 
-.wrap{max-width:980px;margin:auto;padding:24px;}
-nav{position:sticky;top:0;background:rgba(15,23,42,.9);backdrop-filter:blur(8px);padding:10px;border-bottom:1px solid var(--line);z-index: 1000}
+.wrap {
+  max-width: 980px;
+  margin: auto;
+  padding: 24px;
+}
 
-nav a{color:#cbd5e1;margin-right:14px;text-decoration:none;white-space: nowrap;
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(8px);
+  padding: 10px;
+  border-bottom: 1px solid var(--line);
+  z-index: 1000; /* Szükséges, hogy a tartalom felett maradjon legördítéskor */
+}
+
+nav a {
+  color: #cbd5e1;
+  margin-right: 14px;
+  text-decoration: none;
+  white-space: nowrap;
   display: inline-block;
-//background-color: #12121F;
-padding: 6px 8px;
-margin-bottom: 8px;
-  border-radius: 5px; /* Vagy 8px, ha szögletesebb lekerekítést szeretnél */
-
-  /* Sima átmenet a színváltásokhoz hoverkor */
+  /* CSS-ben a megjegyzést /* ... */ formátumban írjuk: */
+  /* background-color: #12121F; */
+  padding: 6px 8px;
+  margin-bottom: 8px;
+  border-radius: 5px;
   transition: background-color 0.25s ease, color 0.25s ease, transform 0.15s ease;
 }
 
@@ -110,6 +126,25 @@ margin-bottom: 8px;
   .tooltip-trigger:hover::after {
     transform: none !important;
   }
+  
+  @media (max-width: 600px) {
+  .wrap {
+    padding: 12px; /* Az oldal széli margóját is felezzük mobilon */
+  }
+
+  nav {
+    padding: 6px 8px; /* Tömörebb navigációs sáv */
+  }
+
+  nav a {
+    font-size: 13px;       /* Kisebb betűméret (alapértelmezetten 16px) */
+    padding: 4px 6px;      /* Kisebb belső margó a gombokon */
+    margin-right: 6px;     /* Kisebb vízszintes távolság a gombok között */
+    margin-bottom: 4px;    /* Kisebb függőleges távolság sorváltáskor */
+    border-radius: 4px;    /* Kicsit finomabb lekerekítés a kisebb gombokhoz */
+  }
+}
+  
 }
 
 /* Kis nyíl a buborék aljára */
